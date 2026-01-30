@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ramadan Gift</title>
+
+<style>
+body {
+    background: radial-gradient(circle at top, #2b1055, #000);
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    text-align: center;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* الحاوية */
+.container {
+    padding: 20px;
+}
+
+/* العناوين */
+h2, h3 {
+    color:#ff85a2;
+    text-shadow: 0 0 15px rgba(255,182,193,0.8);
+    margin-bottom:10px;
+}
+
+#login h2 {
+    font-size: clamp(20px, 5vw, 28px);
+}
+
+#login h3 {
+    font-size: clamp(18px, 4.5vw, 24px);
+}
+
+/* الإدخال */
+input {
+    padding: 12px;
+    width: 220px;
+    border-radius: 25px;
+    border: none;
+    font-size: 16px;
+    text-align: center;
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+}
+
+input::placeholder {
+    color: rgba(255,255,255,0.6);
+}
+
+/* الأزرار */
+button {
+    margin-top: 15px;
+    padding: 12px 30px;
+    border-radius: 30px;
+    border: none;
+    font-size: 16px;
+    background: linear-gradient(45deg, #ff4d6d, #ff85a2);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255,77,109,0.8);
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* إخفاء */
+.hidden {
+    display: none;
+}
+
+/* مطر الإيموجي */
+.emoji {
+    position: fixed;
+    top: -50px;
+    font-size: 24px;
+    animation: fall linear infinite;
+    z-index: 9999;
+}
+
+@keyframes fall {
+    from { transform: translateY(0); }
+    to { transform: translateY(110vh); }
+}
+
+/* الفيديو */
+.video-container {
+    width: 90%;
+    max-width: 650px;
+    margin: 20px auto;
+    aspect-ratio:16/16;
+    overflow: hidden;
+    border-radius:18px ;
+    box-shadow: 0 0 25px;
+    rgba(255,192,203,0,6);
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+   object-fit:cover;
+}
+
+/* الدعاء */
+.dua-box {
+    direction: rtl;
+    text-align: right;
+    line-height: 2;
+    font-size: clamp(16px, 4vw, 20px);
+    margin: 20px auto;
+    width: 90%;
+    max-width: 700px;
+    background: rgba(255, 255, 255, 0.12);
+    padding: 20px;
+    border: 2px solid #ff69b4;
+    border-radius: 25px;
+    box-shadow: 0 0 25px rgba(255,192,203,0.5);
+    word-wrap: break-word;
+}
+</style>
+</head>
+
+<body>
+
+<!-- الصفحة الأولى -->
+<div class="container" id="login">
+    <h2>✨رمضانك نور وطاعة وقرب من الله 🌙</h2>
+    <h3>أجمل قمر و اجمل دكتوره ♥</h3>
+    <h3>❤🌹Basent </h3>
+
+    <input type="password" id="pass" placeholder="ادخلي الباسورد ياقمر ♥">
+    <br>
+    <button onclick="check()">دخول 💖</button>
+</div>
+
+<!-- الصفحة التانية -->
+<div class="container hidden" id="dua">
+
+    <!-- الفيديو -->
+    <div class="video-container">
+        <video id="ramadanVideo" loop playsinline>
+            <source src="ramadan.mp4" type="video/mp4">
+            متصفحك لا يدعم تشغيل الفيديو
+        </video>
+    </div>
+
+    <!-- الدعاء -->
+    <div class="dua-box">
+ وبما أن باقي ايام قليله على رمضان حبيت أكون أول من يهنيكي 🌙✨<br>كل سنه وانتي بخير ورمضان كريم عليكي يارب <br>
+ وربنا يجعل قلبك دائمًا مطمئنًا وسعيدًا 💖<br>
+وارزقك لحظات مليانة فرح وراحة،<br>
+واجعل كل يوم من أيامك قريب من كل اللي تتمنيه ✨<br>
+اللهم اجعل هذا الشهر المبارك بداية لكل خير في حياتك،<br>
+وارزقك الصحة والعافية والسعادة الدائمة،<br>
+واجعل قلبك يفيض حبًا وأملًا في كل لحظة 💖<br>
+اللهم حقق لك كل أحلامك الصغيرة والكبيرة،<br>
+واجعل خطواتك في حياتك دائمًا مباركة،<br>
+وارزقك النجاح والتوفيق في كل شيء تقومين به 🌸<br>
+وبالمناسبة😁 ربنا يجعل الزمالك ديما سبب في فرحتك في كل ماتش ويكسب على طول🏆⚽<br>
+بس لو خسر يوم، خليها ضحكة ونكتة بينا 😂⚽<br>
+ولو في يوم فكرتي تغيري رأيك ...الاهلي هيكون محظوظ بوجود اجمل قمر فيه 😂⚽💕❤
+
+    </div>
+
+    <!-- زر الرجوع -->
+    <button onclick="goBack()">لا تنسيني من صالح دعائك ياقمري 😉♥</button>
+
+</div>
+
+<script>
+// التحقق من الباسورد
+function check() {
+    const p = document.getElementById("pass").value;
+
+    if (p === "7122010") {
+        document.getElementById("login").classList.add("hidden");
+        document.getElementById("dua").classList.remove("hidden");
+
+        const video = document.getElementById("ramadanVideo");
+        video.currentTime = 0;
+        video.play();
+
+        startEmojis();
+    } else {
+        alert( "الباسوردغلط حاول تاني ياقمر😉💕");
+    }
+}
+
+// زر الرجوع
+function goBack() {
+    location.reload();
+}
+
+// مطر الإيموجي
+const emojis = ["🌙", "🏮", "💖","✨","🌹"];
+function createEmoji() {
+    const emoji = document.createElement("div");
+    emoji.classList.add("emoji");
+    emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+    emoji.style.left = Math.random() * 100 + "vw";
+    emoji.style.animationDuration = (3 + Math.random() * 5) + "s";
+    document.body.appendChild(emoji);
+    setTimeout(() => emoji.remove(), 8000);
+}
+
+function startEmojis() {
+    setInterval(createEmoji, 300);
+}
+</script>
+
+</body>
+</html>
